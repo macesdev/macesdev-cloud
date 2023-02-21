@@ -62,7 +62,7 @@ onMounted(() => {
 
 
         <a href="https://cloud.macesdev.net/" class="flex items-center pl-2.5 mb-5">
-         <img src="https://raw.githubusercontent.com/macesdev/macesdev-cloud/maces/assets/web_assets/m_cloud_dark.png" class="h-6 mr-3 sm:h-7" alt="Flowbite Logo" />
+         <img src="https://raw.githubusercontent.com/macesdev/macesdev-cloud/main/macesdev/app_assets/m_cloud_dark.png" class="h-6 mr-3 sm:h-7" alt="Flowbite Logo" />
       </a>
 
 
