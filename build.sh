@@ -20,7 +20,7 @@ echo "✔ - Dallar güncellendi!"
 echo "◉ - Değişiklikler temin ediliyor.."
 git commit -m "mdev.mdkn@latest - $now" 
 echo "✔ - Değişilikler eklendi!"
-echo "◉ - Güncelleniyor.."
+echo "◉ - Güncelleniyo.."
 git push -f origin main 
 echo "✔ - Güncellendi!"
 
