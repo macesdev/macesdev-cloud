@@ -1,0 +1,233 @@
+<script setup>
+import { onMounted } from "vue";
+import {
+  initAccordions,
+  initCarousels,
+  initCollapses,
+  initDials,
+  initDismisses,
+  initDrawers,
+  initDropdowns,
+  initModals,
+  initPopovers,
+  initTabs,
+  initTooltips,
+} from "flowbite";
+
+onMounted(() => {
+  initAccordions();
+  initCarousels();
+  initCollapses();
+  initDials();
+  initDismisses();
+  initDrawers();
+  initDropdowns();
+  initModals();
+  initPopovers();
+  initTabs();
+  initTooltips();
+});
+</script>
+
+<template>
+  <button
+    data-drawer-target="separator-sidebar"
+    data-drawer-toggle="separator-sidebar"
+    aria-controls="separator-sidebar"
+    type="button"
+    class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+  >
+    <span class="sr-only">Open sidebar</span>
+    <svg
+      class="w-6 h-6"
+      aria-hidden="true"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clip-rule="evenodd"
+        fill-rule="evenodd"
+        d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+      ></path>
+    </svg>
+  </button>
+  <aside
+    id="separator-sidebar"
+    class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+    aria-label="Sidebar"
+  >
+    <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+      <ul class="space-y-2">
+
+
+        <a href="https://cloud.macesdev.net/" class="flex items-center pl-2.5 mb-5">
+         <img src="https://raw.githubusercontent.com/macesdev/macesdev-cloud/maces/assets/web_assets/m_cloud_dark.png" class="h-6 mr-3 sm:h-7" alt="Flowbite Logo" />
+      </a>
+
+
+
+        <div>
+          <li v-if="selectedPage == 'main'">
+            <a
+              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white">
+  <path d="M19.5 21a3 3 0 003-3v-4.5a3 3 0 00-3-3h-15a3 3 0 00-3 3V18a3 3 0 003 3h15zM1.5 10.146V6a3 3 0 013-3h5.379a2.25 2.25 0 011.59.659l2.122 2.121c.14.141.331.22.53.22H19.5a3 3 0 013 3v1.146A4.483 4.483 0 0019.5 9h-15a4.483 4.483 0 00-3 1.146z" />
+</svg>
+              <span class="flex-1 ml-3 whitespace-nowrap">Dosyalar</span>
+            </a>
+          </li>
+          <li v-if="selectedPage != 'main'">
+            <a
+              href="/"
+              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white"
+            >
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white">
+  <path d="M19.5 21a3 3 0 003-3v-4.5a3 3 0 00-3-3h-15a3 3 0 00-3 3V18a3 3 0 003 3h15zM1.5 10.146V6a3 3 0 013-3h5.379a2.25 2.25 0 011.59.659l2.122 2.121c.14.141.331.22.53.22H19.5a3 3 0 013 3v1.146A4.483 4.483 0 0019.5 9h-15a4.483 4.483 0 00-3 1.146z" />
+</svg>
+
+
+              <span class="flex-1 ml-3 whitespace-nowrap">Dosyalar</span>
+            </a>
+          </li>
+        </div>
+
+        <div>
+          <li v-if="selectedPage == 'settings'">
+            <a
+              href="#"
+              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white bg-gray-100 bg-gray-700"
+            >
+              <svg
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  clip-rule="evenodd"
+                  fill-rule="evenodd"
+                  d="M7.84 1.804A1 1 0 018.82 1h2.36a1 1 0 01.98.804l.331 1.652a6.993 6.993 0 011.929 1.115l1.598-.54a1 1 0 011.186.447l1.18 2.044a1 1 0 01-.205 1.251l-1.267 1.113a7.047 7.047 0 010 2.228l1.267 1.113a1 1 0 01.206 1.25l-1.18 2.045a1 1 0 01-1.187.447l-1.598-.54a6.993 6.993 0 01-1.929 1.115l-.33 1.652a1 1 0 01-.98.804H8.82a1 1 0 01-.98-.804l-.331-1.652a6.993 6.993 0 01-1.929-1.115l-1.598.54a1 1 0 01-1.186-.447l-1.18-2.044a1 1 0 01.205-1.251l1.267-1.114a7.05 7.05 0 010-2.227L1.821 7.773a1 1 0 01-.206-1.25l1.18-2.045a1 1 0 011.187-.447l1.598.54A6.993 6.993 0 017.51 3.456l.33-1.652zM10 13a3 3 0 100-6 3 3 0 000 6z"
+                ></path>
+              </svg>
+              <span class="flex-1 ml-3 whitespace-nowrap">Ayarlar</span>
+            </a>
+          </li>
+
+          <li v-if="selectedPage != 'settings'">
+            <a
+              href="/user/settings"
+              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white"
+            >
+              <svg
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  clip-rule="evenodd"
+                  fill-rule="evenodd"
+                  d="M7.84 1.804A1 1 0 018.82 1h2.36a1 1 0 01.98.804l.331 1.652a6.993 6.993 0 011.929 1.115l1.598-.54a1 1 0 011.186.447l1.18 2.044a1 1 0 01-.205 1.251l-1.267 1.113a7.047 7.047 0 010 2.228l1.267 1.113a1 1 0 01.206 1.25l-1.18 2.045a1 1 0 01-1.187.447l-1.598-.54a6.993 6.993 0 01-1.929 1.115l-.33 1.652a1 1 0 01-.98.804H8.82a1 1 0 01-.98-.804l-.331-1.652a6.993 6.993 0 01-1.929-1.115l-1.598.54a1 1 0 01-1.186-.447l-1.18-2.044a1 1 0 01.205-1.251l1.267-1.114a7.05 7.05 0 010-2.227L1.821 7.773a1 1 0 01-.206-1.25l1.18-2.045a1 1 0 011.187-.447l1.598.54A6.993 6.993 0 017.51 3.456l.33-1.652zM10 13a3 3 0 100-6 3 3 0 000 6z"
+                ></path>
+              </svg>
+              <span class="flex-1 ml-3 whitespace-nowrap">Ayarlar</span>
+            </a>
+          </li>
+        </div>
+      </ul>
+      <ul
+        class="pt-4 mt-4 space-y-2 border-t border-gray-200 dark:border-gray-700"
+      >
+        <li>
+          <a
+            href="#"
+            class="flex items-center p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group"
+          >
+            <svg
+              aria-hidden="true"
+              class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <span class="ml-3">Hata Bildirimi</span>
+          </a>
+        </li>
+        <div
+          id="dropdown-cta"
+          class="p-4 mt-6 rounded-lg bg-blue-50 dark:bg-blue-900"
+          role="alert"
+        >
+          <div class="flex items-center mb-3">
+            <span
+              class="bg-orange-100 text-orange-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-orange-200 dark:text-orange-900"
+              >Erken Erişim</span
+            >
+            <button
+              type="button"
+              class="ml-auto -mx-1.5 -my-1.5 bg-blue-50 text-blue-900 rounded-lg focus:ring-2 focus:ring-blue-400 p-1 hover:bg-blue-200 inline-flex h-6 w-6 dark:bg-blue-900 dark:text-blue-400 dark:hover:bg-blue-800"
+              data-dismiss-target="#dropdown-cta"
+              aria-label="Close"
+            >
+              <span class="sr-only">Close</span>
+              <svg
+                aria-hidden="true"
+                class="w-4 h-4"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <p class="mb-3 text-sm text-blue-800 dark:text-blue-400">
+            Tüm servislerimizi tek bir çatı altında toplamaya çalışıyoruz..
+            Olası dışı bir hatada bize geri dönüş sağlarsanız seviniriz!
+          </p>
+        </div>
+      </ul>
+    </div>
+  </aside>
+</template>
+
+<script>
+export default {
+  name: "ProfileSidebar",
+  data() {
+    return {
+      selectedPage: null,
+    };
+  },
+  mounted() {
+    const route = useRoute();
+    console.log(route);
+    console.log("sas");
+
+    if (this.$route.fullPath == "/user/settings") {
+      this.selectedPage = "settings";
+    } else if (this.$route.fullPath == "/") {
+      this.selectedPage = "main";
+    } else if (this.$route.fullPath == "/user/notifications") {
+      this.selectedPage = "notifications";
+    } else if (this.$route.fullPath == "/user/services") {
+      this.selectedPage = "services";
+    }
+  },
+};
+</script>
