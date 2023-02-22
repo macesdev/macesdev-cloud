@@ -1,12 +1,8 @@
-<template>
-  <div>
-    <Head>
-      <Title>Ayarlar</Title>
-      <Style type="text/css" :children="pageStyle"></Style>
-    </Head>
-  </div>
 
-  <CloudSidebar />
+
+  <div class="sidebar">
+    <CloudSidebar />
+  </div>
 
   <div class="p-4 sm:ml-64">
     <section class="bg-white dark:bg-gray-900">
@@ -67,9 +63,6 @@
 </template>
 
 <script>
-import { parseStringStyle } from "@vue/shared";
-import colors from "tailwindcss/colors";
-
 export default {
   name: "Settings",
   data() {
