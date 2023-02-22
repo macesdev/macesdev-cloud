@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from "vue";
+import { inject, onMounted } from "vue";
 import {
   initAccordions,
   initCarousels,
@@ -52,6 +52,7 @@ onMounted(() => {
       ></path>
     </svg>
   </button>
+
   <aside
     id="separator-sidebar"
     class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
@@ -59,86 +60,71 @@ onMounted(() => {
   >
     <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
       <ul class="space-y-2">
-
-
-        <a href="https://cloud.macesdev.net/" class="flex items-center pl-2.5 mb-5">
-         <img src="https://raw.githubusercontent.com/macesdev/macesdev-cloud/main/macesdev/app_assets/m_cloud_dark.png" class="h-6 mr-3 sm:h-7" alt="Flowbite Logo" />
-      </a>
-
-
-
-        <div>
-          <li v-if="selectedPage == 'main'">
-            <a
-              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-            >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white">
-  <path d="M19.5 21a3 3 0 003-3v-4.5a3 3 0 00-3-3h-15a3 3 0 00-3 3V18a3 3 0 003 3h15zM1.5 10.146V6a3 3 0 013-3h5.379a2.25 2.25 0 011.59.659l2.122 2.121c.14.141.331.22.53.22H19.5a3 3 0 013 3v1.146A4.483 4.483 0 0019.5 9h-15a4.483 4.483 0 00-3 1.146z" />
-</svg>
-              <span class="flex-1 ml-3 whitespace-nowrap">Dosyalar</span>
-            </a>
-          </li>
-          <li v-if="selectedPage != 'main'">
-            <a
-              href="/"
-              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white"
-            >
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white">
-  <path d="M19.5 21a3 3 0 003-3v-4.5a3 3 0 00-3-3h-15a3 3 0 00-3 3V18a3 3 0 003 3h15zM1.5 10.146V6a3 3 0 013-3h5.379a2.25 2.25 0 011.59.659l2.122 2.121c.14.141.331.22.53.22H19.5a3 3 0 013 3v1.146A4.483 4.483 0 0019.5 9h-15a4.483 4.483 0 00-3 1.146z" />
-</svg>
-
-
-              <span class="flex-1 ml-3 whitespace-nowrap">Dosyalar</span>
-            </a>
-          </li>
+        <div v-if="themeMode == false">
+          <a
+            href="https://cloud.macesdev.net/"
+            class="flex items-center pl-2.5 mb-5"
+          >
+            <img
+              src="https://raw.githubusercontent.com/macesdev/macesdev-cloud/main/macesdev/app_assets/m_cloud_dark.png"
+              class="h-10 mr-6 sm:h-10"
+              alt="Flowbite Logo"
+            />
+          </a>
         </div>
 
-        <div>
-          <li v-if="selectedPage == 'settings'">
-            <a
-              href="#"
-              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white bg-gray-100 bg-gray-700"
-            >
-              <svg
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <path
-                  clip-rule="evenodd"
-                  fill-rule="evenodd"
-                  d="M7.84 1.804A1 1 0 018.82 1h2.36a1 1 0 01.98.804l.331 1.652a6.993 6.993 0 011.929 1.115l1.598-.54a1 1 0 011.186.447l1.18 2.044a1 1 0 01-.205 1.251l-1.267 1.113a7.047 7.047 0 010 2.228l1.267 1.113a1 1 0 01.206 1.25l-1.18 2.045a1 1 0 01-1.187.447l-1.598-.54a6.993 6.993 0 01-1.929 1.115l-.33 1.652a1 1 0 01-.98.804H8.82a1 1 0 01-.98-.804l-.331-1.652a6.993 6.993 0 01-1.929-1.115l-1.598.54a1 1 0 01-1.186-.447l-1.18-2.044a1 1 0 01.205-1.251l1.267-1.114a7.05 7.05 0 010-2.227L1.821 7.773a1 1 0 01-.206-1.25l1.18-2.045a1 1 0 011.187-.447l1.598.54A6.993 6.993 0 017.51 3.456l.33-1.652zM10 13a3 3 0 100-6 3 3 0 000 6z"
-                ></path>
-              </svg>
-              <span class="flex-1 ml-3 whitespace-nowrap">Ayarlar</span>
-            </a>
-          </li>
-
-          <li v-if="selectedPage != 'settings'">
-            <a
-              href="/user/settings"
-              class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white"
-            >
-              <svg
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <path
-                  clip-rule="evenodd"
-                  fill-rule="evenodd"
-                  d="M7.84 1.804A1 1 0 018.82 1h2.36a1 1 0 01.98.804l.331 1.652a6.993 6.993 0 011.929 1.115l1.598-.54a1 1 0 011.186.447l1.18 2.044a1 1 0 01-.205 1.251l-1.267 1.113a7.047 7.047 0 010 2.228l1.267 1.113a1 1 0 01.206 1.25l-1.18 2.045a1 1 0 01-1.187.447l-1.598-.54a6.993 6.993 0 01-1.929 1.115l-.33 1.652a1 1 0 01-.98.804H8.82a1 1 0 01-.98-.804l-.331-1.652a6.993 6.993 0 01-1.929-1.115l-1.598.54a1 1 0 01-1.186-.447l-1.18-2.044a1 1 0 01.205-1.251l1.267-1.114a7.05 7.05 0 010-2.227L1.821 7.773a1 1 0 01-.206-1.25l1.18-2.045a1 1 0 011.187-.447l1.598.54A6.993 6.993 0 017.51 3.456l.33-1.652zM10 13a3 3 0 100-6 3 3 0 000 6z"
-                ></path>
-              </svg>
-              <span class="flex-1 ml-3 whitespace-nowrap">Ayarlar</span>
-            </a>
-          </li>
+        <div v-if="themeMode == true">
+          <a
+            href="https://cloud.macesdev.net/"
+            class="flex items-center pl-2.5 mb-5"
+          >
+            <img
+              src="https://raw.githubusercontent.com/macesdev/macesdev-cloud/main/macesdev/app_assets/m_cloud.png"
+              class="h-10 mr-6 sm:h-10"
+              alt="Flowbite Logo"
+            />
+          </a>
         </div>
+
+        <li>
+          <a
+            href="/"
+            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+            >
+              <path
+                d="M19.5 21a3 3 0 003-3v-4.5a3 3 0 00-3-3h-15a3 3 0 00-3 3V18a3 3 0 003 3h15zM1.5 10.146V6a3 3 0 013-3h5.379a2.25 2.25 0 011.59.659l2.122 2.121c.14.141.331.22.53.22H19.5a3 3 0 013 3v1.146A4.483 4.483 0 0019.5 9h-15a4.483 4.483 0 00-3 1.146z"
+              />
+            </svg>
+            <span class="ml-3">Dosyalar</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/settings"
+            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+          >
+            <svg
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                clip-rule="evenodd"
+                fill-rule="evenodd"
+                d="M7.84 1.804A1 1 0 018.82 1h2.36a1 1 0 01.98.804l.331 1.652a6.993 6.993 0 011.929 1.115l1.598-.54a1 1 0 011.186.447l1.18 2.044a1 1 0 01-.205 1.251l-1.267 1.113a7.047 7.047 0 010 2.228l1.267 1.113a1 1 0 01.206 1.25l-1.18 2.045a1 1 0 01-1.187.447l-1.598-.54a6.993 6.993 0 01-1.929 1.115l-.33 1.652a1 1 0 01-.98.804H8.82a1 1 0 01-.98-.804l-.331-1.652a6.993 6.993 0 01-1.929-1.115l-1.598.54a1 1 0 01-1.186-.447l-1.18-2.044a1 1 0 01.205-1.251l1.267-1.114a7.05 7.05 0 010-2.227L1.821 7.773a1 1 0 01-.206-1.25l1.18-2.045a1 1 0 011.187-.447l1.598.54A6.993 6.993 0 017.51 3.456l.33-1.652zM10 13a3 3 0 100-6 3 3 0 000 6z"
+              ></path>
+            </svg>
+            <span class="flex-1 ml-3 whitespace-nowrap">Ayarlar</span>
+          </a>
+        </li>
       </ul>
       <ul
         class="pt-4 mt-4 space-y-2 border-t border-gray-200 dark:border-gray-700"
@@ -164,6 +150,7 @@ onMounted(() => {
             <span class="ml-3">Hata Bildirimi</span>
           </a>
         </li>
+
         <div
           id="dropdown-cta"
           class="p-4 mt-6 rounded-lg bg-blue-50 dark:bg-blue-900"
@@ -196,7 +183,7 @@ onMounted(() => {
               </svg>
             </button>
           </div>
-          <p class="mb-3 text-sm text-blue-800 dark:text-blue-400">
+          <p class="mb-0 text-sm text-blue-800 dark:text-blue-400">
             Tüm servislerimizi tek bir çatı altında toplamaya çalışıyoruz..
             Olası dışı bir hatada bize geri dönüş sağlarsanız seviniriz!
           </p>
@@ -208,26 +195,12 @@ onMounted(() => {
 
 <script>
 export default {
-  name: "ProfileSidebar",
+  name: "CloudSidebar",
+  inject: ["theme"],
   data() {
     return {
-      selectedPage: null,
+      themeMode: this.theme,
     };
-  },
-  mounted() {
-    const route = useRoute();
-    console.log(route);
-    console.log("sas");
-
-    if (this.$route.fullPath == "/user/settings") {
-      this.selectedPage = "settings";
-    } else if (this.$route.fullPath == "/") {
-      this.selectedPage = "main";
-    } else if (this.$route.fullPath == "/user/notifications") {
-      this.selectedPage = "notifications";
-    } else if (this.$route.fullPath == "/user/services") {
-      this.selectedPage = "services";
-    }
   },
 };
 </script>
