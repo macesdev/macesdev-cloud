@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from "vue";
+/*import { onMounted } from "vue";
 import { Modal } from "flowbite";
 
 onMounted(() => {
@@ -22,7 +22,7 @@ onMounted(() => {
     $buttonElement.addEventListener("click", () => modal.toggle());
     $closeButton.addEventListener("click", () => modal.hide());
   }
-});
+});*/
 </script>
 
 <template>

@@ -1,5 +1,4 @@
-
-
+<template>
   <div class="sidebar">
     <CloudSidebar />
   </div>
@@ -32,11 +31,12 @@
             />
           </div>
           <div class="w-full">
-            <label
+            <div
               for="username"
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >Tema</label
             >
+              Tema
+            </div>
 
             <label class="relative inline-flex items-center cursor-pointer">
               <input
