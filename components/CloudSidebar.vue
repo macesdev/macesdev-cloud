@@ -60,31 +60,16 @@ onMounted(() => {
   >
     <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
       <ul class="space-y-2">
-        <div v-if="themeMode == false">
-          <a
-            href="https://cloud.macesdev.net/"
-            class="flex items-center pl-2.5 mb-5"
-          >
-            <img
-              src="https://raw.githubusercontent.com/macesdev/macesdev-cloud/main/macesdev/app_assets/m_cloud_dark.png"
-              class="h-10 mr-6 sm:h-10"
-              alt="Flowbite Logo"
-            />
-          </a>
-        </div>
-
-        <div v-if="themeMode == true">
-          <a
-            href="https://cloud.macesdev.net/"
-            class="flex items-center pl-2.5 mb-5"
-          >
-            <img
-              src="https://raw.githubusercontent.com/macesdev/macesdev-cloud/main/macesdev/app_assets/m_cloud.png"
-              class="h-10 mr-6 sm:h-10"
-              alt="Flowbite Logo"
-            />
-          </a>
-        </div>
+        <a
+          href="https://cloud.macesdev.net/"
+          class="flex items-center pl-2.5 mb-5"
+        >
+          <img
+            src="https://raw.githubusercontent.com/macesdev/macesdev-cloud/main/macesdev/app_assets/m_cloud_dark.png"
+            class="h-10 mr-6 sm:h-10"
+            alt="Flowbite Logo"
+          />
+        </a>
 
         <li>
           <a
@@ -196,11 +181,8 @@ onMounted(() => {
 <script>
 export default {
   name: "CloudSidebar",
-  inject: ["theme"],
   data() {
-    return {
-      themeMode: this.theme,
-    };
+    return {};
   },
 };
 </script>
