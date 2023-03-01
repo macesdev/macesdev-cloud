@@ -89,6 +89,26 @@ onMounted(() => {
             <span class="ml-3">Dosyalar</span>
           </a>
         </li>
+
+        <li>
+          <a
+            href="https://account.macesdev.net"
+            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+          >
+            <svg
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+              class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+              aria-hidden="true"
+            >
+              <path
+                d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z"
+              ></path>
+            </svg>
+            <span class="ml-3">Profilim</span>
+          </a>
+        </li>
         <li>
           <a
             href="/settings"
@@ -169,8 +189,12 @@ onMounted(() => {
             </button>
           </div>
           <p class="mb-0 text-sm text-blue-800 dark:text-blue-400">
-            Tüm servislerimizi tek bir çatı altında toplamaya çalışıyoruz..
-            Olası dışı bir hatada bize geri dönüş sağlarsanız seviniriz!
+            Tüm servislerimizi tek bir çatı altında toplamaya çalışıyoruz. Bu
+            süre zafında bazı teknik aksaklıklar oluşabilir. Bize bildiriseniz
+            seviniriz!
+            <br />
+            <br />
+            - rewlo editledim bunu ellemeyin lan
           </p>
         </div>
       </ul>

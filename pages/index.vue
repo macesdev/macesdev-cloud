@@ -44,7 +44,13 @@ onMounted(() => {
                 clip-rule="evenodd"
               ></path>
             </svg>
-            <span id="closeButton" class="sr-only">Close modal</span>
+            <span
+              data-modal-hide="modal"
+              data-modal-target="modal"
+              id="closeButton"
+              class="sr-only"
+              >Close modal</span
+            >
           </button>
           <div class="px-6 py-8 lg:px-8">
             <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">
@@ -88,7 +94,7 @@ onMounted(() => {
               <h3
                 class="text-2xl mb-4 font-semibold text-gray-900 dark:text-white"
               >
-                ${ mcloud_root > genel_basliklar }
+                Genel Klasörler
               </h3>
             </div>
             <div class="row">
@@ -127,6 +133,17 @@ onMounted(() => {
                   </div>
                 </div>
                 <div class="pt-3"></div>
+              </div>
+              <div class="pt-3">
+                <hr />
+                <span
+                  class="pt-5 block text-sm text-gray-500 sm:text-center dark:text-gray-400"
+                  >Toplamda
+                  <a href="https://flowbite.com/" class="hover:underline">
+                    {{ folders.length }}
+                  </a>
+                  sonuç bulundu
+                </span>
               </div>
             </div>
           </div>
@@ -211,8 +228,6 @@ onMounted(() => {
 </style>
 
 <script>
-import { Modal } from "flowbite";
-
 export default {
   name: "Cloud",
   data() {

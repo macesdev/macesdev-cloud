@@ -17,4 +17,3 @@ onMounted(() => {
     Görüntüle
   </button>
 </template>
-z

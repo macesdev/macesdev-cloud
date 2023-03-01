@@ -1,6 +1,6 @@
 import axios from "axios";
 export default defineNuxtPlugin((nuxtApp) => {
-  const defaultUrl = "https://d0lqfbsn-3333.use.devtunnels.ms/";
+  const defaultUrl = "https://api.macesdev.net/";
 
   let api = axios.create({
     baseURL: defaultUrl,
